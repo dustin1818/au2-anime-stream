@@ -36,3 +36,7 @@ node_modules
 /coverage
 /test-results
 /playwright-report
+
+#Environment
+.env
+.env.development
