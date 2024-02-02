@@ -1,10 +1,11 @@
+<import from="../../components/button-episode/button-episode"></import>
 <div class="container-fluid bg-white">
     <div class="row">
-        <div class="col-md-4 d-flex flex-column">
+        <div class="col-md-2">
             <img class="img-fluid" src=${anime.poster} alt="Random Anime Image">
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-6 pt-3">
             <h1>${anime.name}</h1>
             <p class="fs-4">${anime.description}</p>
             <div class="d-flex gap-2 flex-wrap">
@@ -16,10 +17,11 @@
             </div>
 
             <button type="button" class="btn btn-primary">Watch Now</button>
-
-
         </div>
 
     </div>
+
+    <button-episode param-id.bind="anime"></button-episode>
+
 
 </div>
