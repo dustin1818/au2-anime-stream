@@ -15,8 +15,12 @@ export class MyApp {
             id: 'about',
             path: 'about',
             component: () => import('./routes/about/about')
+        },
+        {
+            id: 'anime-info',
+            path: 'anime-info/:id',
+            component: () => import('./routes/anime-info/anime-info')
         }
-
     ];
 
     constructor(private ea: EventAggregator) { }
