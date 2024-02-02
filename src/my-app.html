@@ -1,10 +1,9 @@
-<import from="./welcome-page"></import>
-<import from="./about-page.html"></import>
-<import from="./missing-page"></import>
+<!-- <import from="./missing-page"></import> -->
+<import from="./components/nav-bar/nav-bar"></import>
+<import from="./components/search/search"></import>
 
-<nav>
-  <a load="welcome-page">Welcome</a>
-  <a load="about-page">About</a>
-</nav>
+<search showing.bind="showSearch"></search>
 
-<au-viewport default="welcome-page" fallback="missing-page"></au-viewport>
+<nav-bar></nav-bar>
+
+<au-viewport name="main"></au-viewport>
