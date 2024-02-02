@@ -15,7 +15,7 @@
                 <h4 if.bind="searchValue !== ''">Results</h4>
                 <ul class="list-unstyled" if.bind="searchValue !== '' && results.length">
                     <li repeat.for="anime of results" click.trigger="resultClick()"><a class="text-white"
-                            load="/product/${item.id}">${anime.name}</a>
+                            load="/anime-info/${anime.id}">${anime.name}</a>
                     </li>
                 </ul>
                 <p if.bind="searchValue !== '' && !results.length">No search results found.</p>
