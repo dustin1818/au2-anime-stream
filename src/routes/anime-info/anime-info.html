@@ -1,0 +1,25 @@
+<div class="container-fluid bg-white">
+    <div class="row">
+        <div class="col-md-4 d-flex flex-column">
+            <img class="img-fluid" src=${anime.poster} alt="Random Anime Image">
+        </div>
+
+        <div class="col-md-7">
+            <h1>${anime.name}</h1>
+            <p class="fs-4">${anime.description}</p>
+            <div class="d-flex gap-2 flex-wrap">
+                <p class="fw-semibold">${anime.stats.duration}</p>
+                <p class="fw-semibold">${anime.stats.episodes.sub} episodes</p>
+                <p class="fw-semibold">${anime.stats.quality} quality</p>
+                <p class="fw-semibold">${anime.stats.rating}</p>
+                <p class="fw-semibold">${anime.stats.type}</p>
+            </div>
+
+            <button type="button" class="btn btn-primary">Watch Now</button>
+
+
+        </div>
+
+    </div>
+
+</div>
