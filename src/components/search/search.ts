@@ -1,16 +1,15 @@
-// import { ApiService } from "../../services/api-service";
+import { ApiService } from "../../services/api-service";
 import { BindingMode, ICustomElementViewModel, inject, bindable } from "aurelia";
 
-// @inject(ApiService)
+@inject(ApiService)
 export class Search implements ICustomElementViewModel {
-    private results = [];
+    public results = [];
     public searchValue = "";
 
     // Create a bindable property and make it two way, so when we set it to false from this view-model the value goes back out of the component
-
     @bindable({ mode: BindingMode.twoWay }) public showing = false;
-
-    constructor() { }
+    constructor(private api: ApiService) {
+    }
 
     // Called on the container and used to close the search dialog if escape is pressed
     public keypress(event: KeyboardEvent) {
@@ -28,7 +27,9 @@ export class Search implements ICustomElementViewModel {
     public async search(): Promise<void> {
         //only call the api to if our search word is 3 or more characters
         if (this.searchValue.length >= 3) {
-            // this.results = await this.api.search(this.searchValue);
+            const data = await this.api.searchAnime(this.searchValue)
+            this.results = data['animes'];
+            console.log(data);
         }
     }
 
@@ -36,7 +37,4 @@ export class Search implements ICustomElementViewModel {
     public resultClick(): void {
         this.showing = false;
     }
-
-
-
 }
