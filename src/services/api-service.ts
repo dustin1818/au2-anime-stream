@@ -20,4 +20,16 @@ export class ApiService {
         const response = await this.http.get(`/search?q=${query}&page=${page}`);
         return response.json();
     }
+
+    //get anime info
+    public async getAnimeInfo(id: string): Promise<any> {
+        const response = await this.http.get(`/info?id=${id}`);
+        return response.json();
+    }
+
+    //get anime episodes
+    public async getAnimeEpisodes(id: string): Promise<any> {
+        const response = await this.http.get(`/episodes/${id}`);
+        return response.json();
+    }
 } 
