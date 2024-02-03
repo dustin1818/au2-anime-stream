@@ -2,6 +2,14 @@
 
 <div class="container-fluid p-5">
     <button-servers param-id.bind="id"></button-servers>
-
-    <h1>episode-view page</h1>
+    <hr>
+    <div>
+        <video class="img-fluid" id="videoPlayer" controls>
+        </video>
+        <select value.bind="selectedQuality" change.trigger="select()">
+            <option repeat.for="animeQuality of quality" value="${animeQuality}">
+                ${animeQuality }
+            </option>
+        </select>
+    </div>
 </div>
