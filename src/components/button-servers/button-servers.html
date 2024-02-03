@@ -1,0 +1,6 @@
+<div class="container-fluid">
+    <h3 class="mb-4">Click this streams, if video is not playing;</h3>
+    <template repeat.for="server of servers">
+        <button class="btn btn-primary mb-3" click.trigger="getServerSource(server.name)">${server.name}</button>
+    </template>
+</div>
