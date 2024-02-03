@@ -1,16 +1,36 @@
 <import from="../../components/button-servers/button-servers"></import>
 
+<import from="../../components/button-episode/button-episode"></import>
+
 <div class="container-fluid p-5">
     <button-servers param-id.bind="id"></button-servers>
     <hr>
-    <div>
-        <video class="img-fluid" id="videoPlayer" controls>
+    <div class="d-block mt-2">
+        <video class="img-fluid w-100" id="videoPlayer" controls>
         </video>
-        <select value.bind="selectedQuality" change.trigger="select()">
-            <option repeat.for="animeQuality of quality" value="${animeQuality}">
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start flex-wrap">
+        <div class="buttons-container d-flex flex-wrap mt-3 gap-1">
+            <button type="button" class="btn btn-info w-auto" click.trigger="prevEpisode()">Previous</button>
+
+            <button type="button" class="btn btn-info w-auto" click.trigger="nextEpisode()"
+                disabled.bind="totalEpisodes > totalEpisodes + 1">Next</button>
+
+            <button type="button" class="btn btn-info w-auto" click.trigger="downloadEpisode()">Download</button>
+        </div>
+        <select class="form-select form-select-lg w-auto mb-2 border border-primary rounded-2"
+            value.bind="selectedQuality" change.trigger="select()">
+            <option class="dropdown-item" repeat.for="animeQuality of quality" value="${animeQuality}"
+                style="font-size: 14px;">
                 ${animeQuality }
             </option>
         </select>
     </div>
+
+
+
+    <!-- <button-episode></button-episode> -->
+
 
 </div>

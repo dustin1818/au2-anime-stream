@@ -15,7 +15,15 @@ export class ButtonServers implements ICustomElementViewModel {
         console.log(this.servers)
     }
 
-    public async getServerSource(server: string) {
-        this.api.getEpisodeSource(this.paramId, server)
+    public async getServerSource(serverName: string) {
+        this.servers.map((server) => {
+            if (server.name === serverName) {
+                const link = document.createElement('a');
+                link.href = server.url;
+                link.click();
+            }
+        })
+
+
     }
 } 

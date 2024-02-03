@@ -2,7 +2,8 @@
     <h1 class="my-3">Episodes</h1>
     <div class=" d-flex flex-wrap mt-4 gap-2">
         <template repeat.for="i of totalEpisodes">
-            <button type="button" class="btn btn-primary" click.trigger="getEpisodeDetails(i + 1)">${i + 1}</button>
+            <button type="button" class="btn btn-outline-primary" click.trigger="getEpisodeDetails(i + 1)">${i +
+                1}</button>
         </template>
     </div>
 </div>

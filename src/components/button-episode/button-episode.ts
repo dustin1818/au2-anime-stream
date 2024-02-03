@@ -19,8 +19,7 @@ export class ButtonEpisode implements IRouteableComponent {
     }
 
     public async getEpisodeDetails(episode: number) {
-        await this.router.load(`/episode-view/${this.animeEpisodes[episode - 1].id}`)
-
+        await this.router.load(`/episode-view/${this.animeEpisodes[episode - 1].id}`);
     }
 
 }
