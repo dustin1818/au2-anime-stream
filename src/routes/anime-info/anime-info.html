@@ -1,21 +1,24 @@
 <import from="../../components/button-episode/button-episode"></import>
 <div class="container-fluid bg-white">
     <div class="row">
-        <div class="col-md-2">
-            <img class="img-fluid" src=${anime.poster} alt="Random Anime Image">
+        <div class="col-md-3">
+            <img class="img-fluid" src=${anime.image} alt="Random Anime Image">
         </div>
 
-        <div class="col-md-6 pt-3">
-            <h1>${anime.name}</h1>
+        <div class="col-md-8 pt-3">
+            <h1>${anime.title}</h1>
+            <p class="text-secondary fs-5">${anime.otherName}</p>
             <p class="fs-4">${anime.description}</p>
             <div class="d-flex gap-2 flex-wrap">
-                <p class="fw-semibold">${anime.stats.duration}</p>
-                <p class="fw-semibold">${anime.stats.episodes.sub} episodes</p>
-                <p class="fw-semibold">${anime.stats.quality} quality</p>
-                <p class="fw-semibold">${anime.stats.rating}</p>
-                <p class="fw-semibold">${anime.stats.type}</p>
+                <p class="fw-semibold fs-4">${anime.releaseDate} | </p>
+                <p class="fw-semibold fs-4">${anime.totalEpisodes} episodes |</p>
+                <p class="fw-semibold fs-4">${anime.status} |</p>
+                <p class="fw-semibold fs-4 text-uppercase">${anime.subOrDub} |</p>
+                <p class="fw-semibold fs-4">${anime.type} </p>
+                <template repeat.for="genre of anime.genres">
+                    <p class="fw-semibold fs-4"> | ${genre} </p>
+                </template>
             </div>
-
             <button type="button" class="btn btn-primary">Watch Now</button>
         </div>
 
