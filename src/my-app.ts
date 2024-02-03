@@ -20,6 +20,11 @@ export class MyApp {
             id: 'anime-info',
             path: 'anime-info/:id',
             component: () => import('./routes/anime-info/anime-info')
+        },
+        {
+            id: 'episode-view',
+            path: 'episode-view/:id',
+            component: () => import('./routes/episode-view/episode-view')
         }
     ];
 
