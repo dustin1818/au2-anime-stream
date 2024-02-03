@@ -41,7 +41,7 @@ interface animeServerSchema {
     url: string
 }
 interface animeStreamSchema {
-    download: string;
+    download: string,
     sources: [
         {
             url: string,
