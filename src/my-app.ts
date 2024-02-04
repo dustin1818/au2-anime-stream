@@ -12,9 +12,9 @@ export class MyApp {
             component: () => import('./routes/home/home')
         },
         {
-            id: 'about',
-            path: 'about',
-            component: () => import('./routes/about/about')
+            id: 'top-rated',
+            path: 'top-rated',
+            component: () => import('./routes/top-rated/top-rated')
         },
         {
             id: 'anime-info',
