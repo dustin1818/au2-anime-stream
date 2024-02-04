@@ -1,13 +1,13 @@
-<div class="container-fluid p-5">
+<div class="container-fluid px-3 px-md-5">
 
-    <div class="grid row row-cols-5">
+    <div class="grid row row-cols-2 row-cols-sm-4 row-cols-md-5">
         <template repeat.for="recentAnime of results">
-            <div class="col">
-                <div class="card card-div" load="/anime-info/${recentAnime.id}">
+            <div class="col mb-3">
+                <div class="card card-div rounded-1" load="/anime-info/${recentAnime.id}">
                     <div class="card-span rounded-1">
                         ${recentAnime.title}
                     </div>
-                    <img src="${recentAnime.image}" class="img-fluid" alt="${recentAnime.image}">
+                    <img src="${recentAnime.image}" class="h-100 w-100" alt="${recentAnime.image}">
                 </div>
         </template>
     </div>

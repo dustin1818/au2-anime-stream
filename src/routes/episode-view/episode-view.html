@@ -1,7 +1,7 @@
 <import from="../../components/button-servers/button-servers"></import>
 
 
-<div class="container-fluid p-5">
+<div class="container-fluid px-3 px-md-5 pb-3">
     <button-servers param-id.bind="id"></button-servers>
     <hr>
     <div class="d-block mt-2">
@@ -18,8 +18,8 @@
 
             <button type="button" class="btn btn-info w-auto" click.trigger="downloadEpisode()">Download</button>
         </div>
-        <select class="form-select form-select-lg w-auto mb-2 border border-primary rounded-2"
-            value.bind="selectedQuality" change.trigger="select()">
+        <select class="form-select form-select-lg w-auto mb-2 border border-info rounded-2" value.bind="selectedQuality"
+            change.trigger="select()">
             <option class="dropdown-item" repeat.for="animeQuality of quality" value="${animeQuality}"
                 style="font-size: 14px;">
                 ${animeQuality }
