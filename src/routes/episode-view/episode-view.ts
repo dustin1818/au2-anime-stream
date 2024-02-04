@@ -61,10 +61,9 @@ export class EpisodeView implements IRouteableComponent {
         const nextEpID = this.id.replace(number.toString(), nextEp.toString());
         await this.router.load(`/episode-view/${nextEpID}`);
         // Render binding and attached methods for the new episode
-        // this.episodeNumber = nextEp;
-        await this.binding();
-        await this.attached();
-
+        // await this.binding();
+        // await this.attached();
+        window.location.reload();
     }
     public async prevEpisode() {
         const str = this.id;
@@ -74,10 +73,9 @@ export class EpisodeView implements IRouteableComponent {
             const nextEpID = this.id.replace(number.toString(), nextEp.toString());
             await this.router.load(`/episode-view/${nextEpID}`);
             // Render binding and attached methods for the new episode
-            await this.binding();
-            await this.attached();
-            // this.episodeNumber + 1;
-            // console.log(this.episodeNumber);
+            // await this.binding();
+            // await this.attached();
+            window.location.reload();
         }
     }
 }
