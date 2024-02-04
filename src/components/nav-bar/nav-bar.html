@@ -1,25 +1,37 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<import from="./nav-bar.scss"></import>
+
+<header class="header">
     <div class="container-fluid">
-        <a class="navbar-brand bg-transparent text-white" load="">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" load="">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" load="about">About</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link" click.trigger="showSearch()" external><b
-                            class="fa fa-search text-white"></b></a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-sm-4 col-md-3 order-2 order-sm-1">
+                <div class="d-flex">
+                    <a href="#"><i class="fa fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-6 order-1  order-md-2 text-center">
+                <a href="" class="logo">
+                    <h1>Ani<span style="color: #4dd0e1;">go</span>
+                    </h1>
+                </a>
+
+            </div>
+            <div class="col-sm-4 col-md-3 order-3 order-sm-3">
+                <div class="header__switches">
+                    <a href="javascript:void(0);" class="search-switch" click.trigger="showSearch()" external><i
+                            class="fa fa-search"></i></a>
+                    <a href="#" class="nav-switch"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
         </div>
+        <nav class="main__menu">
+            <ul class="nav__menu justify-content-center w-100">
+                <li><a load="home" class="menu--active">Home</a></li>
+                <li class="disabled"><a load="movies" disabled>Movies</a></li>
+                <li><a load="top-rated">Top-Rated</a></li>
+            </ul>
+        </nav>
     </div>
-</nav>
+</header>
