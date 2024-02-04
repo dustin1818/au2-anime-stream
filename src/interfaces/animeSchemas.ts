@@ -7,6 +7,7 @@ interface animeSearchSchema {
     title: string;
     url: string;
 }
+
 interface animeInfoSchema {
     description: string;
     id: string;
@@ -51,4 +52,14 @@ interface animeStreamSchema {
     ]
 }
 
-export { animeSearchSchema, animeInfoSchema, animeEpisodesSchema, animeServerSchema, animeStreamSchema }
+interface recentAnimeSchema {
+    id: string,
+    episodeId: string,
+    episodeNumber: 0,
+    title: string,
+    image: string,
+    url: string
+}
+
+
+export { animeSearchSchema, animeInfoSchema, animeEpisodesSchema, animeServerSchema, animeStreamSchema, recentAnimeSchema }
