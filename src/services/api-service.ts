@@ -21,13 +21,13 @@ export class ApiService {
     }
 
     //get anime info
-    public async getAnimeInfo(id: string): Promise<any> {
+    public async getAnimeInfo(id: string): Promise<any[]> {
         const response = await this.http.get(`/info/${id}`);
         return response.json();
     }
 
     //get anime server
-    public async getAnimeServer(id: string): Promise<any> {
+    public async getAnimeServer(id: string): Promise<any[]> {
         const response = await this.http.get(`/servers/${id}`);
         return response.json();
     }
@@ -35,6 +35,18 @@ export class ApiService {
     //get anime episodes
     public async getEpisodeSource(id: string, server: string = "gogocdn"): Promise<any> {
         const response = await this.http.get(`/watch/${id}?server=${server}`);
+        return response.json();
+    }
+
+    //get recent animes
+    public async getRecentAnimes(): Promise<any[]> {
+        const response = await this.http.get("/recent-episodes");
+        return response.json();
+    }
+
+    //get topAiring animes
+    public async getTopAiringAnimes(): Promise<any[]> {
+        const response = await this.http.get("/top-airing");
         return response.json();
     }
 } 
