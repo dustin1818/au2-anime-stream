@@ -1,12 +1,13 @@
-import { IRouteableComponent } from "@aurelia/router";
+import { IRouteableComponent, IRouter } from "@aurelia/router";
 import { inject } from "aurelia";
 import { ApiService } from "../../services/api-service";
-import { animeInfoSchema } from "../../interfaces/animeSchemas";
+import { animeEpisodesSchema, animeInfoSchema } from "../../interfaces/animeSchemas";
 
-@inject(ApiService)
+@inject(ApiService, IRouter)
 export class AnimeInfo implements IRouteableComponent {
     public anime: animeInfoSchema[] = [];
-    constructor(private api: ApiService) { }
+    public animeEpisodes: animeEpisodesSchema[] = [];
+    constructor(private api: ApiService, private router: IRouter) { }
 
     public async load(parameters: { id: string }): Promise<void> {
         if (parameters.id) {
@@ -16,4 +17,8 @@ export class AnimeInfo implements IRouteableComponent {
     }
 
 
+    public async watchNow() {
+        this.animeEpisodes = this.anime['episodes'][0].id;
+        await this.router.load(`/episode-view/${this.animeEpisodes}`);
+    }
 }
