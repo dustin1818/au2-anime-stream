@@ -1,9 +1,10 @@
 <!-- <import from="./missing-page"></import> -->
 <import from="./components/nav-bar/nav-bar"></import>
 <import from="./components/search/search"></import>
+<import from="./missing-page"></import>
 
 <search showing.bind="showSearch"></search>
 
 <nav-bar></nav-bar>
 
-<au-viewport name="main"></au-viewport>
+<au-viewport name="main" fallback="missing-page"></au-viewport>
